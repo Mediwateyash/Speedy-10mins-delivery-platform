@@ -1,0 +1,43 @@
+.delivery-banner {
+  background: linear-gradient(135deg, var(--yellow-light) 0%, #fffbf0 100%);
+  border: 2px solid var(--yellow);
+  border-radius: var(--r-xl); margin: 8px 0 40px;
+  overflow: hidden;
+}
+/* Make banner full width inside container */
+.delivery-banner .container { max-width: 100%; }
+
+.dbanner-inner {
+  max-width: 1280px; margin: 0 auto; padding: 32px 40px;
+  display: flex; align-items: center; gap: 32px;
+}
+
+/* Rider */
+.dbanner-rider { display: flex; align-items: center; gap: 8px; }
+.rider-emoji   { font-size: 3.5rem; animation: float 2s ease-in-out infinite; }
+.rider-trail   { display: flex; flex-direction: column; gap: 2px; }
+.trail-dot     { font-size: .8rem; opacity: .5; animation: fadeIn .5s ease-in-out infinite alternate; }
+
+/* Content */
+.dbanner-content { flex: 1; }
+.dbanner-pre  { font-size: 1rem; color: var(--text-sec); margin-bottom: 6px; }
+.dbanner-main { display: flex; align-items: center; gap: 10px; }
+.dbanner-clock { font-size: 2rem; }
+.dbanner-time  {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 900; color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), #2e7d52);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Right */
+.dbanner-right  { display: flex; align-items: center; }
+.dbanner-items  { display: flex; gap: 8px; }
+.dbanner-item   { font-size: 2rem; }
+
+@media (max-width: 768px) {
+  .dbanner-inner { flex-direction: column; text-align: center; padding: 24px 20px; }
+  .dbanner-main  { justify-content: center; }
+  .dbanner-rider { justify-content: center; }
+}

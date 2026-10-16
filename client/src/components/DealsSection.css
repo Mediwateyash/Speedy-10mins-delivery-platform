@@ -1,0 +1,110 @@
+.deals-section { padding: 28px 0; }
+
+.deals-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  gap: 16px;
+}
+
+/* ─── Base Card ──────────────────────────────────────────────────────────── */
+.deal-card {
+  border-radius: var(--r-xl);
+  padding: 28px 24px;
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: space-between;
+  min-height: 160px;
+  cursor: pointer;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.deal-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
+.deal-content { position: relative; z-index: 2; }
+.deal-emojis  {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; gap: 4px; align-items: flex-end;
+  font-size: 2rem;
+}
+
+/* ─── Weekend Deals ──────────────────────────────────────────────────────── */
+.deal-weekend {
+  background: linear-gradient(135deg, #0f3d25 0%, #1a5c38 60%, #2e7d52 100%);
+  color: #fff;
+}
+.deal-badge {
+  font-size: 1.3rem; font-weight: 900; color: #fff; margin-bottom: 6px;
+}
+.deal-off-badge {
+  background: var(--yellow); color: var(--text);
+  display: inline-flex; flex-direction: column; align-items: center;
+  border-radius: var(--r-sm); padding: 6px 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 12px rgba(245,197,24,.4);
+  animation: pulse 2s infinite;
+}
+.deal-off-badge span  { font-size: .6rem; font-weight: 700; letter-spacing: 1px; line-height: 1; }
+.deal-off-badge strong { font-size: 1.6rem; font-weight: 900; line-height: 1; }
+.deal-tagline { color: rgba(255,255,255,.8); font-size: .82rem; margin-bottom: 14px; }
+
+/* ─── Flash Deals ────────────────────────────────────────────────────────── */
+.deal-flash {
+  background: linear-gradient(135deg, #fff9e6, #fffbf0);
+  border: 2px solid var(--yellow);
+}
+.flash-header { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+.flash-icon   { font-size: 1.2rem; }
+.flash-title  { font-size: 1.2rem; font-weight: 800; color: var(--text); }
+.flash-sub    { font-size: .78rem; color: var(--text-muted); margin-bottom: 14px; }
+
+.countdown-row { display: flex; align-items: flex-end; gap: 4px; margin-bottom: 14px; }
+.countdown-unit { display: flex; flex-direction: column; align-items: center; }
+.countdown-num  {
+  background: var(--text); color: #fff;
+  font-size: 1.2rem; font-weight: 800; width: 44px; height: 44px;
+  border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center;
+  font-variant-numeric: tabular-nums;
+  transition: transform .3s;
+}
+.countdown-lbl { font-size: .6rem; font-weight: 600; color: var(--text-muted); margin-top: 3px; }
+.count-sep { font-size: 1.4rem; font-weight: 800; color: var(--text); padding-bottom: 14px; }
+
+.flash-emojis { display: flex; flex-direction: column; gap: 4px; font-size: 1.6rem; }
+
+/* ─── Exclusive Deals ────────────────────────────────────────────────────── */
+.deal-exclusive {
+  background: linear-gradient(135deg, #fff0f5, #ffe8f0);
+  border: 1.5px solid #ffb3d1;
+}
+.exclusive-badge { font-size: 1.15rem; font-weight: 800; color: #c2185b; margin-bottom: 6px; }
+.exclusive-sub   { font-size: .82rem; color: var(--text-sec); margin-bottom: 10px; }
+.exclusive-tag {
+  display: inline-block;
+  background: #c2185b; color: #fff;
+  font-size: .6rem; font-weight: 700; letter-spacing: 1px;
+  padding: 3px 10px; border-radius: var(--r-full); margin-bottom: 14px;
+}
+.excl-emojis { font-size: 1.6rem; }
+
+/* ─── Deal Buttons ────────────────────────────────────────────────────────── */
+.deal-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 9px 18px; border-radius: var(--r-full);
+  font-size: .82rem; font-weight: 700; cursor: pointer; border: none;
+  transition: var(--ease);
+}
+.deal-btn:hover { transform: translateX(3px); }
+.deal-btn-light { background: rgba(255,255,255,.2); color: #fff; border: 1.5px solid rgba(255,255,255,.4); }
+.deal-btn-light:hover { background: rgba(255,255,255,.3); }
+.deal-btn-dark  { background: var(--text); color: #fff; }
+.deal-btn-dark:hover  { background: var(--primary-dark); }
+.deal-btn-green { background: var(--primary); color: #fff; }
+.deal-btn-green:hover { background: var(--primary-dark); }
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .deals-grid { grid-template-columns: 1fr 1fr; }
+  .deal-weekend { grid-column: 1 / -1; }
+}
+@media (max-width: 580px) {
+  .deals-grid { grid-template-columns: 1fr; }
+  .deal-weekend { grid-column: auto; }
+}

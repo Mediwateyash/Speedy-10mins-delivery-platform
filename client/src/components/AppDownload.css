@@ -1,0 +1,71 @@
+.app-section {
+  background: var(--primary-dark);
+  padding: 0;
+  overflow: hidden;
+}
+
+.app-inner {
+  display: flex; align-items: center;
+  min-height: 140px;
+}
+
+/* Left */
+.app-left {
+  flex: 2; display: flex; align-items: center; gap: 24px;
+  padding: 36px 40px;
+}
+.app-phone-icon { font-size: 3rem; flex-shrink: 0; }
+.app-left-content { flex: 1; }
+.app-title { color: #fff; font-size: 1.2rem; font-weight: 800; line-height: 1.3; margin-bottom: 6px; }
+.app-sub   { color: rgba(255,255,255,.6); font-size: .82rem; margin-bottom: 16px; }
+
+.app-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+.app-store-btn {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.1); color: #fff;
+  padding: 9px 16px; border-radius: var(--r-md);
+  font-size: .75rem; transition: var(--ease);
+  border: 1.5px solid rgba(255,255,255,.2);
+}
+.app-store-btn:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
+.asb-icon  { font-size: 1.3rem; }
+.asb-small { display: block; font-size: .58rem; opacity: .7; }
+.asb-big   { display: block; font-weight: 700; font-size: .85rem; }
+
+/* QR Code */
+.qr-code   { display: flex; flex-direction: column; align-items: center; gap: 6px; flex-shrink: 0; }
+.qr-inner  { background: #fff; padding: 10px; border-radius: var(--r-sm); }
+.qr-grid   { display: grid; grid-template-columns: repeat(5,1fr); gap: 2px; width: 70px; height: 70px; }
+.qr-cell   { border-radius: 2px; background: transparent; }
+.qr-dark   { background: #1a1a2e; }
+.qr-label  { font-size: .6rem; color: rgba(255,255,255,.5); text-align: center; }
+
+/* Divider */
+.app-divider {
+  width: 1px; align-self: stretch;
+  background: rgba(255,255,255,.15);
+  margin: 24px 0;
+}
+
+/* Right */
+.app-right {
+  flex: 1; padding: 36px 40px;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
+}
+.app-right-icon  { font-size: 2rem; }
+.app-right-title { color: #fff; font-size: .95rem; font-weight: 600; line-height: 1.5; }
+.app-notify-btn  {
+  background: var(--yellow); color: var(--text);
+  padding: 11px 20px; border-radius: var(--r-full);
+  font-size: .82rem; font-weight: 700; border: none; cursor: pointer;
+  transition: var(--ease); display: flex; align-items: center; gap: 6px;
+}
+.app-notify-btn:hover { background: var(--yellow-dark); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(245,197,24,.4); }
+
+@media (max-width: 900px) {
+  .app-inner    { flex-direction: column; }
+  .app-left     { padding: 28px 24px; gap: 16px; }
+  .app-divider  { display: none; }
+  .app-right    { padding: 0 24px 28px; }
+  .qr-code      { display: none; }
+}

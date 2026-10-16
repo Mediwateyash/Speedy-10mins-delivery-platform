@@ -1,0 +1,159 @@
+.hero {
+  background: linear-gradient(135deg, #f0faf4 0%, #e8f5ee 40%, #fff9e6 100%);
+  padding: 60px 0 80px;
+  overflow: hidden;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(245,197,24,.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  min-height: 420px;
+}
+
+/* ─── Left ────────────────────────────────────────────────────────────────── */
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--yellow-light); border: 1.5px solid var(--yellow);
+  color: var(--primary); font-size: .82rem; font-weight: 700;
+  padding: 5px 14px; border-radius: var(--r-full);
+  margin-bottom: 16px;
+}
+.badge-icon { font-size: 1rem; }
+
+.hero-headline {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 900; line-height: 1.15;
+  color: var(--text); margin-bottom: 16px;
+}
+.hero-highlight {
+  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), #2e7d52);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: 1rem; color: var(--text-sec); line-height: 1.7;
+  margin-bottom: 28px; max-width: 480px;
+}
+
+.hero-input-wrap {
+  display: flex; align-items: center; gap: 0;
+  background: var(--white);
+  border: 1.5px solid var(--border); border-radius: var(--r-full);
+  padding: 6px 6px 6px 16px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+  max-width: 480px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.hero-input-wrap:focus-within {
+  border-color: var(--primary); box-shadow: 0 0 0 3px rgba(26,92,56,.1);
+}
+.input-icon { font-size: .95rem; margin-right: 8px; opacity: .6; }
+.location-input {
+  flex: 1; border: none; outline: none; font-size: .9rem;
+  font-family: inherit; color: var(--text); background: transparent;
+}
+.shop-now-btn {
+  background: var(--primary); color: #fff;
+  padding: 11px 24px; border-radius: var(--r-full);
+  font-weight: 700; font-size: .9rem;
+  transition: var(--ease); border: none; cursor: pointer;
+  display: flex; align-items: center; gap: 6px;
+  white-space: nowrap;
+}
+.shop-now-btn:hover { background: var(--primary-dark); transform: translateX(2px); }
+
+.hero-apps { display: flex; flex-direction: column; gap: 8px; }
+.apps-label { font-size: .75rem; color: var(--text-muted); font-weight: 500; }
+.app-badges { display: flex; gap: 10px; }
+.app-badge {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--text); color: #fff;
+  padding: 9px 16px; border-radius: var(--r-sm);
+  font-size: .75rem; transition: var(--ease);
+}
+.app-badge:hover { background: var(--primary); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.app-badge-sub  { display: block; font-size: .6rem; opacity: .7; }
+.app-badge-main { display: block; font-size: .85rem; font-weight: 700; }
+
+/* ─── Right Visual ────────────────────────────────────────────────────────── */
+.hero-visual { position: relative; height: 500px; display: flex; align-items: center; justify-content: center; }
+
+.hero-badge-float {
+  position: absolute; z-index: 10;
+  background: var(--white); border-radius: var(--r-lg);
+  padding: 12px 16px; box-shadow: var(--shadow-md);
+  font-size: .8rem; font-weight: 600; line-height: 1.8;
+  color: var(--primary); border-left: 3px solid var(--yellow);
+}
+.hbf-line { display: flex; align-items: center; }
+
+/* Bag */
+.hero-bag {
+  position: relative; z-index: 5;
+  width: 290px; height: 340px;
+}
+.bag-body {
+  width: 100%; height: 100%;
+  background: linear-gradient(145deg, #1a5c38, #2e7d52);
+  border-radius: 24px 24px 36px 36px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 20px;
+  box-shadow: 0 24px 70px rgba(26,92,56,.35);
+  padding: 28px;
+  animation: float 4s ease-in-out infinite;
+}
+.bag-logo { display: flex; align-items: center; gap: 10px; }
+.bag-logo-icon { font-size: 2rem; background: var(--yellow); width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink:0; }
+.bag-logo-name { color: #fff; font-size: 1.3rem; font-weight: 800; }
+.bag-logo-sub  { color: rgba(255,255,255,.7); font-size: .6rem; font-weight: 600; letter-spacing: 1px; }
+
+.bag-items { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.bag-item  { font-size: 1.9rem; animation: bounce 2s ease-in-out infinite; }
+
+/* Phone */
+.hero-phone {
+  position: absolute; right: -10px; top: 50%;
+  transform: translateY(-50%);
+  width: 140px;
+  background: #1a1a2e;
+  border-radius: 22px;
+  padding: 12px;
+  box-shadow: var(--shadow-lg), 0 0 0 2px rgba(255,255,255,.08);
+  z-index: 6;
+}
+.phone-screen { background: #fff; border-radius: 14px; overflow: hidden; padding: 10px; }
+.phone-header { display: flex; align-items: center; gap: 5px; margin-bottom: 8px; }
+.ph-icon { font-size: .85rem; background: var(--yellow); padding: 3px 5px; border-radius: 5px; }
+.ph-name { font-size: .7rem; font-weight: 800; color: var(--primary); }
+.phone-banner { background: var(--primary-light); border-radius: 8px; padding: 7px; font-size: .58rem; color: var(--primary); margin-bottom: 8px; text-align: center; }
+.phone-banner strong { font-weight: 800; color: var(--primary); display: block; font-size: .75rem; }
+.phone-items  { display: flex; gap: 5px; justify-content: center; margin-bottom: 8px; }
+.phone-item   { font-size: 1.1rem; background: var(--bg); border-radius: 7px; padding: 5px; }
+.phone-delivery { display: flex; align-items: center; gap: 4px; font-size: .58rem; color: var(--primary); font-weight: 600; background: var(--yellow-light); border-radius: 7px; padding: 5px 7px; }
+
+/* Floating produce */
+.produce-float { position: absolute; z-index: 2; pointer-events: none; }
+
+/* ─── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-visual { height: 360px; }
+  .hero-phone  { width: 120px; right: -5px; }
+  .hero-bag    { width: 240px; height: 290px; }
+}
+@media (max-width: 600px) {
+  .hero { padding: 40px 0 60px; }
+  .shop-now-btn { padding: 11px 16px; font-size: .8rem; }
+}
